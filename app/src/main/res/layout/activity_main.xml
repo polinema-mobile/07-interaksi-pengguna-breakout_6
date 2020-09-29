@@ -54,40 +54,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNim" />
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="174dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="357dp"
+        android:layout_height="54dp"
         android:layout_marginTop="16dp"
-        android:text="Laki-Laki"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton3"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTanggalLahir" />
-
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="166dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Perempuan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioButton2"
-        app:layout_constraintTop_toBottomOf="@+id/editTanggalLahir" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="361dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:text="SIMPAN DATA"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerJurusan" />
+        app:layout_constraintTop_toBottomOf="@+id/editTanggalLahir">
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="176dp"
+            android:layout_height="match_parent"
+            android:text="Laki-Laki" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="181dp"
+            android:layout_height="match_parent"
+            android:text="Perempuan" />
+
+    </RadioGroup>
 
     <Spinner
         android:id="@+id/spinnerJurusan"
@@ -101,6 +90,16 @@
         android:entries="@array/jurusan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="361dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="SIMPAN DATA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerJurusan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
