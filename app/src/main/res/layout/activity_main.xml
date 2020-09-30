@@ -65,13 +65,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editTanggalLahir">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/male"
             android:layout_width="176dp"
             android:layout_height="match_parent"
             android:text="Laki-Laki" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/female"
             android:layout_width="181dp"
             android:layout_height="match_parent"
             android:text="Perempuan" />
@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/simpan"
         android:layout_width="361dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
