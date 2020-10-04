@@ -20,13 +20,12 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     DatePickerDialog picker;
-    private RadioGroup radioGroup;
     private RadioGroup sexGroup;
-    private RadioButton male, female;
+    private RadioButton jk;
     EditText born, name, nim;
     Spinner jurusan;
     Calendar calendar;
-    Button simpan;
+    Button simpan, parcel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +35,10 @@ public class MainActivity extends AppCompatActivity {
         born.setInputType(InputType.TYPE_NULL);
         name= (EditText) findViewById(R.id.editNama);
         nim= (EditText) findViewById(R.id.editNim);
-        radioGroup = findViewById(R.id.radioGroup);
         sexGroup = findViewById(R.id.radioGroup);
-        male = findViewById(R.id.male);
-        female = findViewById(R.id.female);
         jurusan =(Spinner) findViewById(R.id.spinnerJurusan);
         simpan = (Button) findViewById(R.id.simpan);
+        parcel = (Button) findViewById(R.id.simpanPar);
 
 
 
@@ -67,20 +64,28 @@ public class MainActivity extends AppCompatActivity {
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int selectedId = radioGroup.getCheckedRadioButtonId();
+                int select = sexGroup.getCheckedRadioButtonId();
+                jk = (RadioButton)findViewById(select);
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                 Bundle bundle = new Bundle();
                 intent.putExtra("data1", name.getText().toString());
                 intent.putExtra("data2", nim.getText().toString());
                 intent.putExtra("data3", born.getText().toString());
-                if (male.isChecked()) {
-                    male = (RadioButton) findViewById(selectedId);
-                    intent.putExtra("data4", male.getText().toString());
-                }else if (female.isChecked()) {
-                    female = (RadioButton) findViewById(selectedId);
-                    intent.putExtra("data4", female.getText().toString());
-                }
+                intent.putExtra("data4", jk.getText().toString());
                 intent.putExtra("data5", jurusan.getSelectedItem().toString());
+                startActivity(intent);
+            }
+        });
+
+        parcel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int select = sexGroup.getCheckedRadioButtonId();
+                jk = (RadioButton)findViewById(select);
+
+                Parcel parcel = new Parcel(name.getText().toString(), nim.getText().toString(), born.getText().toString(), jk.getText().toString(), jurusan.getSelectedItem().toString());
+                Intent intent = new Intent(MainActivity.this, DetailParcelable.class);
+                intent.putExtra("Parcelable", parcel);
                 startActivity(intent);
             }
         });

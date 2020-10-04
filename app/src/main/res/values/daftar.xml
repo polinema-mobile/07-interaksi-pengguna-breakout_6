@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="jurusan">
-        <item> Akutansi </item>
-        <item> Teknik Mesin </item>
-        <item> Teknologi Informatika </item>
         <item> Administrasi Niaga </item>
+        <item> Akutansi </item>
+        <item> Bahasa </item>
         <item> Teknik Kimia </item>
+        <item> Teknik Mesin </item>
         <item> Teknik Sipil </item>
+        <item> Teknologi Informatika </item>
     </string-array>
 </resources>
